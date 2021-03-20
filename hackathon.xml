@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2020-11-22T14:37:38+03:00">
+    <shop>
+        <name>hackathon.oggettoweb.com</name>
+        <company>Oggettoweb</company>
+        <url>http://hackathon.oggettoweb.com</url>
+        <offers>
+            <offer id="WJ01-S-Blue" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-blue_main_1.jpg</image>
+				<param name="Color">Blue</param>
+				<param name="Size">S</param>
+            </offer>
+            <offer id="WJ01-S-Red" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-red_main_1.jpg</image>
+				<param name="Color">Red</param>
+				<param name="Size">S</param>
+            </offer>
+            <offer id="WJ01-S-Yellow" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-yellow_main_1.jpg</image>
+				<param name="Color">Yellow</param>
+				<param name="Size">S</param>
+            </offer>
+            <offer id="WJ01-M-Blue" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-blue_main_1.jpg</image>
+				<param name="Color">Blue</param>
+				<param name="Size">M</param>
+            </offer>
+            <offer id="WJ01-M-Red" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-red_main_1.jpg</image>
+				<param name="Color">Red</param>
+				<param name="Size">M</param>
+            </offer>
+            <offer id="WJ01-M-Yellow" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-yellow_main_1.jpg</image>
+				<param name="Color">Yellow</param>
+				<param name="Size">M</param>
+            </offer>
+            <offer id="WJ01-L-Blue" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-blue_main_1.jpg</image>
+				<param name="Color">Blue</param>
+				<param name="Size">L</param>
+            </offer>
+            <offer id="WJ01-L-Red" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-red_main_1.jpg</image>
+				<param name="Color">Red</param>
+				<param name="Size">L</param>
+            </offer>
+            <offer id="WJ01-L-Yellow" parent="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+                <price>75</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-yellow_main_1.jpg</image>
+				<param name="Color">Yellow</param>
+				<param name="Size">L</param>
+            </offer>	
+            <offer id="WJ01">
+                <name>Stellar Solar Jacket</name>
+                <url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-red_main_1.jpg</image>
+            </offer>
+            <offer id="WP10-28-Black" parent="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+                <price>40.80</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-black_main_1.jpg</image>
+				<param name="Color">Black</param>
+				<param name="Size">28</param>
+            </offer>
+            <offer id="WP10-28-Gray" parent="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+                <price>40.80</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-gray_main_1.jpg</image>
+				<param name="Color">Gray</param>
+				<param name="Size">28</param>
+            </offer>
+            <offer id="WP10-28-White" parent="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+                <price>40.80</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-white_main_1.jpg</image>
+				<param name="Color">White</param>
+				<param name="Size">28</param>
+            </offer>
+            <offer id="WP10-29-Black" parent="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+                <price>40.80</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-black_main_1.jpg</image>
+				<param name="Color">Black</param>
+				<param name="Size">29</param>
+            </offer>
+            <offer id="WP10-29-Gray" parent="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+                <price>40.80</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-gray_main_1.jpg</image>
+				<param name="Color">Gray</param>
+				<param name="Size">29</param>
+            </offer>
+            <offer id="WP10-29-White" parent="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+                <price>40.80</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-white_main_1.jpg</image>
+				<param name="Color">White</param>
+				<param name="Size">29</param>
+            </offer>
+			<offer id="WP10">
+                <name>Daria Bikram Pant</name>
+                <url>https://hackathon.oggettoweb.com/daria-bikram-pant.html</url>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/p/wp10-white_main_1.jpg</image>
+            </offer>
+            <offer id="24-WB04">
+                <name>Push It Messenger Bag</name>
+                <url>https://hackathon.oggettoweb.com/push-it-messenger-bag.html</url>
+                <price>45</price>
+                <currencyId>USD</currencyId>
+				<image>https://hackathon.oggettoweb.com/media/catalog/product/w/b/wb04-blue-0.jpg</image>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>
