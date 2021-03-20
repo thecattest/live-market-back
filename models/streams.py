@@ -10,6 +10,7 @@ class Stream(SqlAlchemyBase, SerializerMixin):
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
     title = sqlalchemy.Column(sqlalchemy.String(200), unique=False, nullable=False)
+    products = sqlalchemy.Column(sqlalchemy.JSON, unique=False, nullable=True)
     # implement streams realization - here may be column with youtube stream link
     # like this
     # youtube_link = sqlalchemy.Column(sqlalchemy.String(100), unique=False, nullable=False)
@@ -17,9 +18,6 @@ class Stream(SqlAlchemyBase, SerializerMixin):
     # user holding stream
     owner_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
     owner = orm.relation("User")
-
-    # products feed
-    products = orm.relation("Product", back_populates="stream")
 
     def __repr__(self):
         return f"<Stream {self.id} '{self.title}' {self.owner.login}>"

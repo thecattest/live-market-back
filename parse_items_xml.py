@@ -85,44 +85,51 @@ def parse_element(elem):
     }.get(e_type)(elem)
 
 
-root = ET.parse('hackathon.xml').getroot()
-items = {}
-for offer in root.findall('shop/offers/offer'):
-    item = parse_element(offer)
-    print(item)
-    e_type = item[E_TYPE]
-    if e_type == PARENT:
-        id = item[ID]
-        if id not in items:
-            items[id] = {E_TYPE: SELECTORS, OPTIONS: []}
-        for key, value in item.items():
-            items[id][key] = value
-    elif e_type == CHILD:
-        id = item[PAR_ID]
-        if id not in items:
-            items[id] = {E_TYPE: SELECTORS, OPTIONS: []}
-        obj = {
-            ID: item[ID],
-            IMAGE: item[IMAGE],
-            NAME: item[NAME],
-            PRICE: item[PRICE],
-            CURR: item[CURR],
-            **item[PARAM]
-        }
-        items[id][OPTIONS].append(obj)
-    else:
-        id = item[ID]
-        obj = {
-            E_TYPE: item[E_TYPE],
-            ID: item[ID],
-            IMAGE: item[IMAGE],
-            NAME: item[NAME],
-            PRICE: item[PRICE],
-            CURR: item[CURR]
-        }
-        items[id] = obj
+def get_sample_json(debug=False):
+    root = ET.parse('hackathon.xml').getroot()
+    items = {}
+    for offer in root.findall('shop/offers/offer'):
+        item = parse_element(offer)
+        if debug:
+            print(item)
+        e_type = item[E_TYPE]
+        if e_type == PARENT:
+            id = item[ID]
+            if id not in items:
+                items[id] = {E_TYPE: SELECTORS, OPTIONS: []}
+            for key, value in item.items():
+                items[id][key] = value
+        elif e_type == CHILD:
+            id = item[PAR_ID]
+            if id not in items:
+                items[id] = {E_TYPE: SELECTORS, OPTIONS: []}
+            obj = {
+                ID: item[ID],
+                IMAGE: item[IMAGE],
+                NAME: item[NAME],
+                PRICE: item[PRICE],
+                CURR: item[CURR],
+                **item[PARAM]
+            }
+            items[id][OPTIONS].append(obj)
+        else:
+            id = item[ID]
+            obj = {
+                E_TYPE: item[E_TYPE],
+                ID: item[ID],
+                IMAGE: item[IMAGE],
+                NAME: item[NAME],
+                PRICE: item[PRICE],
+                CURR: item[CURR]
+            }
+            items[id] = obj
+    if debug:
+        pprint(items)
+    return items
 
-with open('output.json', 'wt') as file:
-    import json
-    json.dump(items, file)
-pprint(items)
+
+if __name__ == '__main__':
+    items = get_sample_json()
+    with open('output.json', 'wt') as file:
+        import json
+        json.dump(items, file)
