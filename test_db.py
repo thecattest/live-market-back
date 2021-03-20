@@ -8,7 +8,7 @@ db = db_session.create_session()
 def test_data():
     thecattest = User()
     thecattest.login = "thecattest"
-    thecattest.set_password("thecattestpasswordisqwerty")
+    thecattest.set_password("qwerty")
 
     stream = Stream()
     stream.title = "Test Stream"
@@ -29,7 +29,7 @@ def load_test_data():
     return thecattest, stream
 
 
-thecattest, stream = load_test_data()
+thecattest, stream = test_data()
 
 print(stream.to_dict(only=("id", "title")))
 print(stream)
