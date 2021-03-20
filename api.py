@@ -1,11 +1,12 @@
 from configure_app import *
+from parse_items_xml import get_json
 
 
 api_blueprint = Blueprint("api", __name__,
                           template_folder="templates")
 
 
-@api_blueprint.route("/api/get_stream")
+@api_blueprint.route("/api/stream")
 @login_required
 def get_stream():
     if current_user.stream:
@@ -14,7 +15,7 @@ def get_stream():
         return make_response(jsonify({"status": "stream not found"}))
 
 
-@api_blueprint.route("/api/create_stream/<title>")
+@api_blueprint.route("/api/stream/create/<title>")
 @login_required
 def create_stream(title):
     if current_user.stream is None:
@@ -30,7 +31,7 @@ def create_stream(title):
         return redirect("/api/get_stream")
 
 
-@api_blueprint.route("/api/end_stream")
+@api_blueprint.route("/api/stream/end")
 @login_required
 def end_stream():
     if current_user.stream is not None:
@@ -40,6 +41,18 @@ def end_stream():
         db.commit()
         return make_response(jsonify({"status": "ok"}))
     return make_response(jsonify({"status": "stream not found"}))
+
+
+# @api_blueprint.route("/api/stream/xml", methods=["POST"])
+# def add_feed():
+#     if request.method == "POST":
+#         file = request.files['file']
+#         print(dir(file))
+#         print(file.mimetype)
+#         if file.mimetype != "application/xml":
+#             return make_response(jsonify({"status": "wrong file type"}))
+#
+#         return make_response(jsonify({"status": "ok"}))
 
 
 @api_blueprint.route("/api/cart/<ids>")

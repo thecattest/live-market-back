@@ -85,8 +85,14 @@ def parse_element(elem):
     }.get(e_type)(elem)
 
 
-def get_sample_json(debug=False):
-    root = ET.parse('hackathon.xml').getroot()
+def get_sample_json():
+    with open("hackathon.xml") as file:
+        xml = file.read()
+    return get_json(xml)
+
+
+def get_json(xml, debug=False):
+    root = ET.fromstring(xml) # .getroot()
     items = {}
     for offer in root.findall('shop/offers/offer'):
         item = parse_element(offer)
@@ -130,6 +136,7 @@ def get_sample_json(debug=False):
 
 if __name__ == '__main__':
     items = get_sample_json()
+    print(items)
     with open('output.json', 'wt') as file:
         import json
         json.dump(items, file)
