@@ -40,3 +40,10 @@ def end_stream():
         db.commit()
         return make_response(jsonify({"status": "ok"}))
     return make_response(jsonify({"status": "stream not found"}))
+
+
+@api_blueprint.route("/api/cart/<ids>")
+def create_cart(ids):
+    base_url = "https://hackathon.oggettoweb.com/checkout/cart/addmultiple/products/{}"
+    url = base_url.format(ids)
+    return redirect(url)
