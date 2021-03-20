@@ -19,5 +19,8 @@ class Stream(SqlAlchemyBase, SerializerMixin):
     owner_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
     owner = orm.relation("User")
 
+    def dict(self):
+        return self.to_dict(only=("id", "title", "products", "owner_id"))
+
     def __repr__(self):
         return f"<Stream {self.id} '{self.title}' {self.owner.login}>"

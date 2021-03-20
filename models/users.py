@@ -16,7 +16,7 @@ class User(SqlAlchemyBase, SerializerMixin, UserMixin):
     login = sqlalchemy.Column(sqlalchemy.String(100), unique=True, nullable=False)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
-    streams = orm.relation("Stream", back_populates="owner")
+    stream = orm.relation("Stream", back_populates="owner", uselist=False)
     # students = orm.relation("Student", back_populates="group")
     # days = orm.relation("Day", back_populates="group")
 
