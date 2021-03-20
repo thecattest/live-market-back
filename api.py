@@ -60,3 +60,8 @@ def create_cart(ids):
     base_url = "https://hackathon.oggettoweb.com/checkout/cart/addmultiple/products/{}"
     url = base_url.format(ids)
     return redirect(url)
+
+
+@api_blueprint.route("/ping")
+def ping():
+    return "pong"
