@@ -54,7 +54,7 @@ def end_stream():
         db.commit()
 
 
-@app.route("/api/stream/get/<login>")
+@api_blueprint.route("/api/stream/get/<login>")
 def get_stream(login):
     db = db_session.create_session()
     user = db.query(User).filter(User.login == login).first()
