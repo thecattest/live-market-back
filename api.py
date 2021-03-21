@@ -29,3 +29,9 @@ def create_cart(ids):
     base_url = "https://hackathon.oggettoweb.com/checkout/cart/addmultiple/products/{}"
     url = base_url.format(ids)
     return redirect(url)
+
+
+@api_blueprint.route("/api/stream/get_twitch")
+@login_required
+def get_twith():
+    return current_user.twitch_nickname
