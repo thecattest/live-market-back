@@ -17,6 +17,7 @@ class User(SqlAlchemyBase, SerializerMixin, UserMixin):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     twitch_nickname = sqlalchemy.Column(sqlalchemy.String, nullable=False)
     products = sqlalchemy.Column(sqlalchemy.JSON, unique=False, nullable=True)
+    stream_started = sqlalchemy.Column(sqlalchemy.Boolean, default=False, nullable=False)
 
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)

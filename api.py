@@ -29,7 +29,6 @@ def get_feed():
     return make_response(current_user.products if current_user.products else '{}')
 
 
-
 @api_blueprint.route("/api/cart/<ids>")
 def create_cart(ids):
     base_url = "https://hackathon.oggettoweb.com/checkout/cart/addmultiple/products/{}"
@@ -37,7 +36,29 @@ def create_cart(ids):
     return redirect(url)
 
 
-@api_blueprint.route("/api/stream/get_twitch")
+@api_blueprint.route("/api/stream/get_nickname")
 @login_required
-def get_twith():
+def get_twitch():
+    current_user.stream_started = True
+    db = db_session.create_session().object_session(current_user)
+    db.commit()
     return current_user.twitch_nickname
+
+
+@api_blueprint.route("/api/stream/end")
+@login_required
+def end_stream():
+    if current_user.stream_started:
+        current_user.stream_started = False
+        db = db_session.create_session().object_session(current_user)
+        db.commit()
+
+
+@app.route("/api/stream/get/<login>")
+def get_stream(login):
+    db = db_session.create_session()
+    user = db.query(User).filter(User.login == login).first()
+    if user and user.stream_started:
+        return make_response(jsonify({"status": "ok",
+                                      "twitch_nickname": user.twitch_nickname}))
+    return make_response(jsonify({"status": "stream is not started"}))
