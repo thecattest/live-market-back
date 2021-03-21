@@ -41,20 +41,15 @@ def send_static(path):
     return send_file(os.path.join(root_dir(), "templates", path))
 
 
-@app.route("/login", methods=["POST", "GET"])
+@app.route("/login", methods=["POST"])
 def login_page():
     if request.method == "POST":
         db = db_session.create_session()
         user = db.query(User).filter(User.login == request.form["login"].strip().lower()).first()
-        print(user)
-        print(list(request.form.keys()))
         if user and user.check_password(request.form["password"].strip()):
-            print(user)
-            login_user(user, remember=request.form.get("remember-me", False))
-            print("authed")
-            return redirect("/")
-        return f'{request.form["login"]} {request.form["password"]}'
-    return send_html("login.html")
+            login_user(user, remember=True)
+            return make_response(jsonify({"status": "accepted"}))
+        return make_response(jsonify({"status": "not accepted"}))
 
 
 @app.route("/xml")
@@ -67,7 +62,7 @@ def xml():
 @login_required
 def logout():
     logout_user()
-    return redirect("/")
+    return make_response(jsonify({"status": "ok"}))
 
 
 if __name__ == '__main__':
