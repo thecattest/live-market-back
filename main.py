@@ -48,7 +48,9 @@ def login_page():
         user = db.query(User).filter(User.login == request.form["login"].strip().lower()).first()
         if user and user.check_password(request.form["password"].strip()):
             login_user(user, remember=True)
+            return redirect("http://92.53.124.98:3000/")
             return make_response(jsonify({"status": "accepted"}))
+        return redirect("http://92.53.124.98:3000/login")
         return make_response(jsonify({"status": "not accepted"}))
 
 
@@ -62,7 +64,7 @@ def xml():
 @login_required
 def logout():
     logout_user()
-    return make_response(jsonify({"status": "ok"}))
+    return redirect("http://92.53.124.98:3000/login")
 
 
 if __name__ == '__main__':

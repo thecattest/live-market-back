@@ -13,7 +13,7 @@ import os
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.unauthorized_handler(callback=(lambda: redirect('/login')))
+login_manager.unauthorized_handler(callback=(lambda: redirect('http://92.53.124.98:3000/login')))
 app.config['SECRET_KEY'] = 'somenewsupersecretkeyforlivemarketappyouwillneverguess'
 CORS(app)
 
