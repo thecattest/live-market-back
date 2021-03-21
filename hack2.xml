@@ -1,0 +1,39 @@
+<yml_catalog date="2020-11-22T14:37:38+03:00">
+<shop>
+<name>hackathon.oggettoweb.com</name>
+<company>Oggettoweb</company>
+<url>http://hackathon.oggettoweb.com</url>
+<offers>
+<offer id="WJ01-L-Red" parent="WJ01">
+<name>Stellar Solar Jacket</name>
+<url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+<price>75</price>
+<currencyId>USD</currencyId>
+<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-red_main_1.jpg</image>
+<param name="Color">Red</param>
+<param name="Size">L</param>
+</offer>
+<offer id="WJ01-L-Yellow" parent="WJ01">
+<name>Stellar Solar Jacket</name>
+<url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+<price>75</price>
+<currencyId>USD</currencyId>
+<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-yellow_main_1.jpg</image>
+<param name="Color">Yellow</param>
+<param name="Size">L</param>
+</offer>
+<offer id="WJ01">
+<name>Stellar Solar Jacket</name>
+<url>https://hackathon.oggettoweb.com/stellar-solar-jacket.html</url>
+<image>https://hackathon.oggettoweb.com/media/catalog/product/w/j/wj01-red_main_1.jpg</image>
+</offer>
+<offer id="24-WB04">
+<name>Push It Messenger Bag</name>
+<url>https://hackathon.oggettoweb.com/push-it-messenger-bag.html</url>
+<price>45</price>
+<currencyId>USD</currencyId>
+<image>https://hackathon.oggettoweb.com/media/catalog/product/w/b/wb04-blue-0.jpg</image>
+</offer>
+</offers>
+</shop>
+</yml_catalog>

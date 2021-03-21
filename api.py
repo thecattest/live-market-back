@@ -6,9 +6,9 @@ api_blueprint = Blueprint("api", __name__,
                           template_folder="templates")
 
 
-@api_blueprint.route("/api/stream/xml", methods=["GET", "POST"])
+@api_blueprint.route("/api/stream/xml", methods=["POST"])
 @login_required
-def feed():
+def update_feed():
     if request.method == "POST":
         print(list(request.files.keys()))
         print('file' in request.files)
@@ -21,7 +21,13 @@ def feed():
         current_user.products = items
         db = db_session.create_session().object_session(current_user)
         db.commit()
-    return make_response(current_user.products)
+    return get_feed()
+
+
+@api_blueprint.route("/api/stream/xml", methods=["GET"])
+def get_feed():
+    return make_response(current_user.products if current_user.products else '{}')
+
 
 
 @api_blueprint.route("/api/cart/<ids>")
