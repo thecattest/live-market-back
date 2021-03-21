@@ -15,10 +15,8 @@ class User(SqlAlchemyBase, SerializerMixin, UserMixin):
                            primary_key=True, autoincrement=True)
     login = sqlalchemy.Column(sqlalchemy.String(100), unique=True, nullable=False)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-
-    stream = orm.relation("Stream", back_populates="owner", uselist=False)
-    # students = orm.relation("Student", back_populates="group")
-    # days = orm.relation("Day", back_populates="group")
+    twitch_nickname = sqlalchemy.Column(sqlalchemy.String, nullable=False)
+    products = sqlalchemy.Column(sqlalchemy.JSON, unique=False, nullable=True)
 
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)

@@ -9,31 +9,17 @@ def test_data():
     thecattest = User()
     thecattest.login = "thecattest"
     thecattest.set_password("qwerty")
-
-    stream = Stream()
-    stream.title = "Test Stream"
-    stream.owner = thecattest
-    products_json = get_sample_json()
-    stream.products = products_json
-
+    thecattest.twitch_nickname = "the_cattest"
     db.add(thecattest)
-    db.add(stream)
     db.commit()
-
-    return thecattest, stream
+    return thecattest
 
 
 def load_test_data():
     thecattest = db.query(User).first()
-    stream = db.query(Stream).first()
-    return thecattest, stream
+    return thecattest
 
 
-thecattest, stream = test_data()
+thecattest = test_data()
 
-print(stream.to_dict(only=("id", "title")))
-print(stream)
-print()
 print(thecattest)
-print()
-print(stream.products)

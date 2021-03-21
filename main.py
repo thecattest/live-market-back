@@ -57,6 +57,12 @@ def login_page():
     return send_html("login.html")
 
 
+@app.route("/xml")
+@login_required
+def xml():
+    return send_html("xml.html")
+
+
 @app.route("/logout")
 @login_required
 def logout():
